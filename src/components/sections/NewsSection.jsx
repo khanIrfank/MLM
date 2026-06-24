@@ -136,6 +136,7 @@ const NewsSection = () => {
                   glareEnable={true}
                   glareMaxOpacity={0.1}
                   scale={1.01}
+                  tiltEnable={typeof window !== 'undefined' ? window.innerWidth > 768 : true}
                   className="h-full cursor-grab active:cursor-grabbing"
                 >
                   <div className="bg-[#111827] border border-white/5 hover:border-white/10 rounded-2xl p-6 flex flex-col justify-between gap-6 shadow-xl h-full relative overflow-hidden transition-all duration-300">

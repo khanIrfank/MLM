@@ -141,7 +141,7 @@ const HeroSection = () => {
             initial={{ opacity: 0, scale: 0.9, rotateY: 15 }}
             animate={{ opacity: 1, scale: 1, rotateY: 0 }}
             transition={{ type: 'spring', stiffness: 100, damping: 15, delay: 0.2 }}
-            className="w-full max-w-[500px] bg-[#111827]/70 backdrop-blur-xl border border-white/10 rounded-2xl p-6 shadow-2xl shadow-black/40 transform-style-3d glow-card-blue animate-float"
+            className="w-full max-w-[500px] bg-[#111827]/70 backdrop-blur-xl border border-white/10 rounded-2xl p-4 sm:p-6 shadow-2xl shadow-black/40 transform-style-3d glow-card-blue animate-float"
           >
             {/* Window header */}
             <div className="flex items-center justify-between pb-4 border-b border-white/5 mb-5">
@@ -161,19 +161,21 @@ const HeroSection = () => {
             <div className="flex flex-col gap-4">
               
               {/* Crypto Row (BTC) */}
-              <div className="flex items-center justify-between p-3.5 bg-[#0B1120]/60 rounded-xl border border-white/5 hover:border-white/10 transition-all">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-500 font-bold">₿</div>
+              <div className="flex items-center justify-between p-2.5 sm:p-3.5 bg-[#0B1120]/60 rounded-xl border border-white/5 hover:border-white/10 transition-all">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-orange-500/10 flex items-center justify-center text-orange-500 font-bold shrink-0">₿</div>
                   <div>
-                    <h4 className="font-bold text-sm text-white">BTC / USDT</h4>
-                    <span className="text-xs text-gray-500">Bitcoin Network</span>
+                    <h4 className="font-bold text-xs sm:text-sm text-white">BTC / USDT</h4>
+                    <span className="text-[10px] sm:text-xs text-gray-500">Bitcoin Network</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <Sparkline data={btcSparkline} color={direction.btc === 'up' ? '#00D26A' : '#EF4444'} />
+                <div className="flex items-center gap-2 sm:gap-4">
+                  <div className="hidden sm:block">
+                    <Sparkline data={btcSparkline} color={direction.btc === 'up' ? '#00D26A' : '#EF4444'} />
+                  </div>
                   <div className="text-right">
-                    <span className="font-bold text-sm block">${btcPrice.toLocaleString()}</span>
-                    <span className={`inline-flex items-center text-xs font-semibold gap-0.5 ${direction.btc === 'up' ? 'text-[#00D26A]' : 'text-red-500'}`}>
+                    <span className="font-bold text-xs sm:text-sm block">${btcPrice.toLocaleString()}</span>
+                    <span className={`inline-flex items-center text-[10px] sm:text-xs font-semibold gap-0.5 ${direction.btc === 'up' ? 'text-[#00D26A]' : 'text-red-500'}`}>
                       {direction.btc === 'up' ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
                       {direction.btc === 'up' ? '+0.42%' : '-0.15%'}
                     </span>
@@ -182,19 +184,21 @@ const HeroSection = () => {
               </div>
 
               {/* Forex Row (EUR/USD) */}
-              <div className="flex items-center justify-between p-3.5 bg-[#0B1120]/60 rounded-xl border border-white/5 hover:border-white/10 transition-all">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500 font-bold">€</div>
+              <div className="flex items-center justify-between p-2.5 sm:p-3.5 bg-[#0B1120]/60 rounded-xl border border-white/5 hover:border-white/10 transition-all">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-blue-500/10 flex items-center justify-center text-blue-500 font-bold shrink-0">€</div>
                   <div>
-                    <h4 className="font-bold text-sm text-white">EUR / USD</h4>
-                    <span className="text-xs text-gray-500">Euro FX Market</span>
+                    <h4 className="font-bold text-xs sm:text-sm text-white">EUR / USD</h4>
+                    <span className="text-[10px] sm:text-xs text-gray-500">Euro FX Market</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <Sparkline data={eurSparkline} color={direction.eur === 'up' ? '#00D26A' : '#EF4444'} />
+                <div className="flex items-center gap-2 sm:gap-4">
+                  <div className="hidden sm:block">
+                    <Sparkline data={eurSparkline} color={direction.eur === 'up' ? '#00D26A' : '#EF4444'} />
+                  </div>
                   <div className="text-right">
-                    <span className="font-bold text-sm block">${eurUsd}</span>
-                    <span className={`inline-flex items-center text-xs font-semibold gap-0.5 ${direction.eur === 'up' ? 'text-[#00D26A]' : 'text-red-500'}`}>
+                    <span className="font-bold text-xs sm:text-sm block">${eurUsd}</span>
+                    <span className={`inline-flex items-center text-[10px] sm:text-xs font-semibold gap-0.5 ${direction.eur === 'up' ? 'text-[#00D26A]' : 'text-red-500'}`}>
                       {direction.eur === 'up' ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
                       {direction.eur === 'up' ? '+0.08%' : '-0.04%'}
                     </span>
@@ -203,19 +207,21 @@ const HeroSection = () => {
               </div>
 
               {/* Stock Row (TSLA) */}
-              <div className="flex items-center justify-between p-3.5 bg-[#0B1120]/60 rounded-xl border border-white/5 hover:border-white/10 transition-all">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-500 font-bold">T</div>
+              <div className="flex items-center justify-between p-2.5 sm:p-3.5 bg-[#0B1120]/60 rounded-xl border border-white/5 hover:border-white/10 transition-all">
+                <div className="flex items-center gap-2 sm:gap-3">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-red-500/10 flex items-center justify-center text-red-500 font-bold shrink-0">T</div>
                   <div>
-                    <h4 className="font-bold text-sm text-white">TSLA</h4>
-                    <span className="text-xs text-gray-500">Tesla Motors Inc</span>
+                    <h4 className="font-bold text-xs sm:text-sm text-white">TSLA</h4>
+                    <span className="text-[10px] sm:text-xs text-gray-500">Tesla Motors Inc</span>
                   </div>
                 </div>
-                <div className="flex items-center gap-4">
-                  <Sparkline data={tslaSparkline} color={direction.tsla === 'up' ? '#00D26A' : '#EF4444'} />
+                <div className="flex items-center gap-2 sm:gap-4">
+                  <div className="hidden sm:block">
+                    <Sparkline data={tslaSparkline} color={direction.tsla === 'up' ? '#00D26A' : '#EF4444'} />
+                  </div>
                   <div className="text-right">
-                    <span className="font-bold text-sm block">${tslaPrice}</span>
-                    <span className={`inline-flex items-center text-xs font-semibold gap-0.5 ${direction.tsla === 'up' ? 'text-[#00D26A]' : 'text-red-500'}`}>
+                    <span className="font-bold text-xs sm:text-sm block">${tslaPrice}</span>
+                    <span className={`inline-flex items-center text-[10px] sm:text-xs font-semibold gap-0.5 ${direction.tsla === 'up' ? 'text-[#00D26A]' : 'text-red-500'}`}>
                       {direction.tsla === 'up' ? <TrendingUp className="w-3 h-3" /> : <TrendingDown className="w-3 h-3" />}
                       {direction.tsla === 'up' ? '+0.12%' : '-0.28%'}
                     </span>

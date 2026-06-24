@@ -7,11 +7,15 @@ const CountUpNumber = ({ value, suffix = '', duration = 1.5 }) => {
   const [count, setCount] = useState(0);
   const { ref, inView } = useInView({ triggerOnce: true, threshold: 0.1 });
 
+  // Extract number and text part (e.g. '180K' -> number: 180, unit: 'K')
+  const numPart = parseFloat(value);
+  const unitPart = value.replace(/[0-9.]/g, '');
+
   useEffect(() => {
     if (!inView) return;
 
     let start = 0;
-    const end = parseInt(value.replace(/[^0-9]/g, ''), 10);
+    const end = numPart;
     if (start === end) return;
 
     const totalMiliseconds = duration * 1000;
@@ -25,23 +29,16 @@ const CountUpNumber = ({ value, suffix = '', duration = 1.5 }) => {
         setCount(end);
         clearInterval(timer);
       } else {
-        setCount(Math.floor(start));
+        setCount(Math.ceil(start));
       }
     }, incrementTime);
 
     return () => clearInterval(timer);
-  }, [inView, value, duration]);
-
-  // Format count if it's large
-  const displayVal = count >= 1000 && value.includes('K') 
-    ? `${(count / 1000).toFixed(0)}K` 
-    : count >= 1000 && value.includes('B') 
-      ? `${(count / 1000).toFixed(1)}B` 
-      : count;
+  }, [inView, numPart, duration]);
 
   return (
-    <span ref={ref} className="font-extrabold text-3xl sm:text-4xl md:text-5xl bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
-      {displayVal}{suffix}
+    <span ref={ref} className="font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-5xl bg-gradient-to-r from-white to-gray-300 bg-clip-text text-transparent">
+      {count}{unitPart}{suffix}
     </span>
   );
 };
@@ -80,7 +77,7 @@ const TrustedBySection = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.5, delay: i * 0.1 }}
-                className="flex flex-col items-center text-center p-6 bg-[#111827]/40 rounded-2xl border border-white/5 relative group hover:border-[#00D26A]/20 transition-all duration-300"
+                className="flex flex-col items-center text-center p-4 sm:p-6 bg-[#111827]/40 rounded-2xl border border-white/5 relative group hover:border-[#00D26A]/20 transition-all duration-300"
               >
                 <div className={`p-3 rounded-xl bg-white/5 mb-4 group-hover:scale-110 transition-transform ${stat.color}`}>
                   <Icon className="w-6 h-6" />

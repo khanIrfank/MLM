@@ -105,7 +105,7 @@ const PricingSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: i * 0.1 }}
-              className={`bg-[#111827] border rounded-3xl p-8 flex flex-col justify-between gap-8 relative overflow-hidden transition-all duration-300 ${plan.glow}`}
+              className={`bg-[#111827] border rounded-3xl p-6 sm:p-8 flex flex-col justify-between gap-8 relative overflow-hidden transition-all duration-300 ${plan.glow}`}
             >
               {plan.popular && (
                 <div className="absolute top-0 right-6 bg-gradient-to-r from-[#2563EB] to-[#00D26A] text-[#0B1120] text-[10px] font-black uppercase tracking-widest px-4 py-1.5 rounded-b-xl shadow">

@@ -67,6 +67,7 @@ const WhyChooseUsSection = () => {
                 glarePosition="all"
                 glareBorderRadius="16px"
                 scale={1.015}
+                tiltEnable={typeof window !== 'undefined' ? window.innerWidth > 768 : true}
                 className="cursor-grab active:cursor-grabbing"
               >
                 <motion.div

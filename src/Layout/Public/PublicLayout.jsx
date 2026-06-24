@@ -5,7 +5,7 @@ import InteractiveCanvas from '../../components/InteractiveCanvas';
 
 const PublicLayout = ({ children, view, setView }) => {
   return (
-    <div className="relative min-h-screen bg-[#0B1120] text-white selection:bg-[#00D26A]/30 selection:text-[#00D26A] flex flex-col font-sans">
+    <div className="relative min-h-screen bg-[#0B1120] text-white selection:bg-[#00D26A]/30 selection:text-[#00D26A] flex flex-col font-sans overflow-x-hidden max-w-full">
       {/* Animated particle canvas background */}
       <InteractiveCanvas />
       
