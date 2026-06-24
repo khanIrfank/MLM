@@ -39,7 +39,7 @@ const HeroSection = () => {
   const tslaSparkline = [190.20, 189.50, 188.40, 189.10, 187.90, 187.10, tslaPrice];
 
   const handleCTA = () => {
-    const target = document.getElementById('pricing');
+    const target = document.getElementById('cta');
     if (target) target.scrollIntoView({ behavior: 'smooth' });
   };
 

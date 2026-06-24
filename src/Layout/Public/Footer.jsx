@@ -39,7 +39,6 @@ const Footer = ({ view, setView }) => {
       links: [
         { label: 'Markets Dashboard', href: '#markets' },
         { label: 'Market News Feed', href: '#news' },
-        { label: 'Pricing Plans', href: '#pricing' },
         { label: 'About Our Systems', href: '#why-choose-us' },
       ],
     },

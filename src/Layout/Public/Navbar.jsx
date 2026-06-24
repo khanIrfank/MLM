@@ -12,7 +12,6 @@ const Navbar = ({ view, setView }) => {
     { name: 'Markets', href: '#markets', id: 'markets' },
     { name: 'Education', href: '#education', id: 'education' },
     { name: 'News', href: '#news', id: 'news' },
-    { name: 'Pricing', href: '#pricing', id: 'pricing' },
     { name: 'Blog', href: '#insights', id: 'insights' },
     { name: 'About Us', href: '#why-choose-us', id: 'why-choose-us' },
     { name: 'Contact', href: '#cta', id: 'cta' },

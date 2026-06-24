@@ -7,7 +7,6 @@ import WhyChooseUsSection from '../../components/sections/WhyChooseUsSection';
 import NewsSection from '../../components/sections/NewsSection';
 import MarketInsightsSection from '../../components/sections/MarketInsightsSection';
 import TestimonialsSection from '../../components/sections/TestimonialsSection';
-import PricingSection from '../../components/sections/PricingSection';
 import FAQSection from '../../components/sections/FAQSection';
 import CTASection from '../../components/sections/CTASection';
 
@@ -38,13 +37,10 @@ const Home = ({ setView }) => {
       {/* 8. Testimonials */}
       <TestimonialsSection />
 
-      {/* 9. Pricing */}
-      <PricingSection />
-
-      {/* 10. FAQ */}
+      {/* 9. FAQ */}
       <FAQSection />
 
-      {/* 11. CTA Section / Contact */}
+      {/* 10. CTA Section / Contact */}
       <CTASection />
     </div>
   );
